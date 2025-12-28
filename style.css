@@ -1,0 +1,324 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary-color: #3b5bcc;
+  --primary-hover: #2f49a3;
+  --text-color: #1f2937;
+  --bg-color: #f9fafb;
+  --white: #ffffff;
+}
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page background */
+body {
+  background: linear-gradient(180deg, #f9fafb, #f1f5f9);
+  color: var(--text-color);
+}
+
+/* Anchor defaults */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Section spacing */
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5rem 6vw;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6vw;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  transition: 0.3s;
+}
+
+/* Navbar when scrolled */
+nav.scrolled {
+  background: var(--primary-color);
+}
+
+.nav-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+nav.scrolled .nav-logo {
+  color: white;
+}
+
+/* Navigation links */
+.nav-menu {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+nav.scrolled .nav-link:hover {
+  color: #fff;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.55rem 1.2rem;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+}
+
+/* Prevent navbar overlap */
+main {
+  padding-top: 100px;
+}
+
+/* ================= HEADERS ================= */
+.top-header {
+  margin-bottom: 2.5rem;
+}
+
+.top-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.top-header span {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* ================= HOME SECTION ================= */
+.home {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh;
+  flex-wrap: wrap;
+}
+
+.home-text {
+  flex: 1;
+}
+
+.home-text h2 {
+  font-size: 2.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.typed-text {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.home-text p {
+  margin: 1rem 0;
+  color: #4b5563;
+  max-width: 650px;
+  line-height: 1.7;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Profile image */
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.home-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* ================= SKILLS / PROJECT GRID ================= */
+.skills-grid,
+.github-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.3rem;
+}
+
+.skill-card,
+.project-card {
+  background: white;
+  padding: 1.2rem 1.3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.skill-card:hover,
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Project hover effect */
+.project-card:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Tags */
+.project-tag {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.project-tag.github {
+  background: #111827;
+  color: white;
+}
+
+.project-tag.linkedin {
+  background: #0a66c2;
+  color: white;
+}
+
+/* ================= CONTACT ================= */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.35s ease;
+  overflow: hidden;
+}
+
+.contact-item i {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.contact-text {
+  position: absolute;
+  opacity: 0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  color: white;
+  font-weight: 500;
+  transition: 0.35s ease;
+  pointer-events: none;
+}
+
+.contact-item:hover {
+  width: 260px;
+  border-radius: 14px;
+  background: var(--primary-color);
+  justify-content: flex-start;
+  padding-left: 18px;
+}
+
+.contact-item:hover i {
+  color: white;
+}
+
+.contact-item:hover .contact-text {
+  opacity: 1;
+  transform: translateX(15px);
+  pointer-events: auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .contact-item {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-item:hover {
+    width: 220px;
+  }
+}
